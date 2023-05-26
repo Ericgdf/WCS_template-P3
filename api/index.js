@@ -1,4 +1,5 @@
 const express = require('express');
+const {userRouter} = require('./src/routes')
 const app = express();
 
 
@@ -10,6 +11,8 @@ APIRouter.get('/version', function(req, res){
     const {version} = require('./package.json') // NORME récupère la version
     return res.json({version}) // la renvoie en format json  Les standard de version : coorection des bug dernier chiffre / deuxieme chiffre ajouts d'une nouvelle feature / premier chiffres breaking change 
 })
+
+APIRouter.use('/users', userRouter);
 
 
 app.use('/api',APIRouter);

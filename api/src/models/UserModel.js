@@ -1,11 +1,14 @@
 // enfant de Base Model
+const BaseModel = require("./BaseModel");
 
 class UserModel extends BaseModel {
 
     
     constructor(){
-        super('user')
+        super('users')
     }
 
 
 }
+
+module.exports = UserModel;
